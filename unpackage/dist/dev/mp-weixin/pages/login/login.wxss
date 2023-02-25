@@ -1,0 +1,17 @@
+
+.example {
+	padding: 15px;
+	background-color: #fff;
+}
+.register{
+	position:relative;
+	left:400rpx;
+	font-size:13px;
+	color:#ccc;
+}
+.regi{
+	margin-left:10rpx;
+	color:black;
+	font-size:14px;
+}
+

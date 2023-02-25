@@ -130,20 +130,123 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
-  },
-  methods: {} };exports.default = _default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _loading = _interopRequireDefault(__webpack_require__(/*! @/common/mixin/loading.js */ 38));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var card = function card() {__webpack_require__.e(/*! require.ensure | components/common/card */ "components/common/card").then((function () {return resolve(__webpack_require__(/*! @/components/common/card.vue */ 82));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { mixins: [_loading.default], components: { card: card }, data: function data() {return { loginStatus: '', orders: [{ name: "待付款", icon: "icon-wallet_icon", index: 1 }, { name: "待使用", icon: "icon-daishouhuo", index: 2 }, { name: "待评价", icon: "icon-pinglun", index: 3 }, { name: "退款/售后", icon: "icon-wallet_icon" }] };}, methods: { openLogin: function openLogin() {console.log("打开注册页面");uni.navigateTo({ url: '../login/login' });}, tomessage: function tomessage() {console.log("跳转消息");}, toorder: function toorder() {console.log("跳转订单");} } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

@@ -1,5 +1,11 @@
 import App from './App'
 
+
+
+
+import loadingPlus from "@/common/mixin/loading-plus.vue"
+Vue.component('loading-plus',loadingPlus)
+
 // #ifndef VUE3
 import Vue from 'vue'
 Vue.config.productionTip = false

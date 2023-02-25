@@ -5,7 +5,10 @@
     "pages/cart/cart",
     "pages/my/my",
     "pages/address/address",
-    "pages/search/search"
+    "pages/msg-list/msg-list",
+    "pages/search/search",
+    "pages/login/login",
+    "pages/register/register"
   ],
   "subPackages": [],
   "window": {
@@ -46,6 +49,8 @@
       }
     ]
   },
-  "usingComponents": {},
+  "usingComponents": {
+    "loading-plus": "/common/mixin/loading-plus"
+  },
   "sitemapLocation": "sitemap.json"
 }

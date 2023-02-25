@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "登录",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-forms": "/components/uni-ui/uni-forms/components/uni-forms/uni-forms",
+    "uni-card": "/components/uni-ui/uni-card/components/uni-card/uni-card",
+    "uni-forms-item": "/components/uni-ui/uni-forms/components/uni-forms-item/uni-forms-item",
+    "uni-section": "/components/uni-ui/uni-section/uni-section",
+    "uni-easyinput": "/components/uni-ui/uni-easyinput/uni-easyinput",
+    "uni-segmented-control": "/components/uni-ui/uni-segmented-control/uni-segmented-control",
+    "uni-data-checkbox": "/components/uni-ui/uni-data-checkbox/uni-data-checkbox",
+    "uni-datetime-picker": "/components/uni-ui/uni-datetime-picker/uni-datetime-picker"
+  }
+}
