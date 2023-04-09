@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "price": "/components/common/price",
+    "uni-rate": "/components/uni-ui/uni-rate/uni-rate"
+  }
+}

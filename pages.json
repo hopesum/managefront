@@ -13,6 +13,35 @@
 				"navigationBarTitleText": "分类"
 			}
 		},
+		{
+		    "path" : "pages/search-list/search-list",
+		    "style": {
+				"enablePullDownRefresh":true,
+		    	"app-plus":{
+		    		"scrollIndicator":"none",
+		    		"titleNView":{
+		    			"searchInput":{
+		    				"align":"left",
+		    				"backgroundColor":"#F7F7F7",
+		    				"borderRadius":"4px",
+		    				"disabled":false,
+		    				"placeholder":"麻辣烫",
+		    				"placeholderColor":"#CCCCCC"
+		    			},
+		    			"buttons":[
+		    				{
+		    					"color":"#989898",
+		    					"colorPressed":"#FD6801",
+		    					"float":"right",
+		    					"fontSize":"16px",
+		    					"text":"搜索"
+		    				}
+		    			]
+		    		}
+		    	}
+		    }
+		}
+		,
 	
 		{
 			"path": "pages/cart/cart",
@@ -30,7 +59,7 @@
             "path" : "pages/address/address",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "我的地址",
+                "navigationBarTitleText": "添加收获地址",
                 "enablePullDownRefresh": false
             }
             
@@ -65,6 +94,177 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "注册",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user-set/user-set",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户设置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/showaddress/showaddress",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的收获地址",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/editaddress/editaddress",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑收货地址",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/shop/shop",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "店铺",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/backface/backface",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "反馈",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/myorder/myorder",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/like-list/like-list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "收藏列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/pay-result/pay-result",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "支付",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/myorderlist/myorderlist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/oneorder/oneorder",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/aboutperson/aboutperson",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "骑手",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/horsemanindex/horsemanindex",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "骑手首页",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/frontpersonlist/frontpersonlist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "人员列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/frontpersonfill/frontpersonfill",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "骑手认证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/frontpersonnavigate/frontpersonnavigate",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "骑手导航",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/frontpersoncancel/frontpersoncancel",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "取消订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/frontpersoncanselfromshop/frontpersoncanselfromshop",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单取消",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/frontpersonorderdetail/frontpersonorderdetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单详情",
                 "enablePullDownRefresh": false
             }
             

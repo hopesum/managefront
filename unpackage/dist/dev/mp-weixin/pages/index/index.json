@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "wake食铺",
-  "usingComponents": {}
+  "usingComponents": {
+    "index-nav": "/components/index/index-nav",
+    "common-list": "/components/common/common-list"
+  }
 }

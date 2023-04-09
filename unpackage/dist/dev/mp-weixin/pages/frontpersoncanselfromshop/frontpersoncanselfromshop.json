@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单取消",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "process": "/components/qy/process"
+  }
+}

@@ -1,4 +1,10 @@
 {
   "navigationBarTitleText": "购物车",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar",
+    "common-list": "/components/common/common-list",
+    "divider": "/components/common/divider",
+    "uni-rate": "/components/uni-ui/uni-rate/uni-rate",
+    "price": "/components/common/price"
+  }
 }

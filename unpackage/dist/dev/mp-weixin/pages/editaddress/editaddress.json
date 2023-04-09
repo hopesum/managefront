@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "编辑收货地址",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "softsl-address-picker": "/components/softsl-address-picker/softsl-address-picker",
+    "uni-forms": "/components/uni-ui/uni-forms/components/uni-forms/uni-forms",
+    "uni-easyinput": "/components/uni-ui/uni-easyinput/uni-easyinput",
+    "uni-forms-item": "/components/uni-ui/uni-forms/components/uni-forms-item/uni-forms-item"
+  }
+}

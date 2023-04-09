@@ -29,12 +29,11 @@
       "outputPath": ""
     },
     "disableUseStrict": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.30.1",
-  "appid": "touristappid",
+  "appid": "wx7d608360ff86b051",
   "projectname": "sellmanage",
   "condition": {},
   "editorSetting": {

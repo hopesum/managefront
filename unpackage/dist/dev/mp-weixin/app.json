@@ -2,13 +2,33 @@
   "pages": [
     "pages/index/index",
     "pages/sort/sort",
+    "pages/search-list/search-list",
     "pages/cart/cart",
     "pages/my/my",
     "pages/address/address",
     "pages/msg-list/msg-list",
     "pages/search/search",
     "pages/login/login",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/user-set/user-set",
+    "pages/detail/detail",
+    "pages/showaddress/showaddress",
+    "pages/editaddress/editaddress",
+    "pages/shop/shop",
+    "pages/backface/backface",
+    "pages/myorder/myorder",
+    "pages/like-list/like-list",
+    "pages/pay-result/pay-result",
+    "pages/myorderlist/myorderlist",
+    "pages/oneorder/oneorder",
+    "pages/aboutperson/aboutperson",
+    "pages/horsemanindex/horsemanindex",
+    "pages/frontpersonlist/frontpersonlist",
+    "pages/frontpersonfill/frontpersonfill",
+    "pages/frontpersonnavigate/frontpersonnavigate",
+    "pages/frontpersoncancel/frontpersoncancel",
+    "pages/frontpersoncanselfromshop/frontpersoncanselfromshop",
+    "pages/frontpersonorderdetail/frontpersonorderdetail"
   ],
   "subPackages": [],
   "window": {
@@ -50,7 +70,8 @@
     ]
   },
   "usingComponents": {
-    "loading-plus": "/common/mixin/loading-plus"
-  },
-  "sitemapLocation": "sitemap.json"
+    "loading-plus": "/common/mixin/loading-plus",
+    "divider": "/components/common/divider",
+    "loading": "/components/common/loading"
+  }
 }

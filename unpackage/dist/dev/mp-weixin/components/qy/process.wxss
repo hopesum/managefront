@@ -1,0 +1,42 @@
+.Process {
+  background-color: #fff;
+  padding: 10px;
+}
+.Process .process_01 {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #FAFAFA;
+}
+.Process .process_01 .process_01_l {
+  width: 10%;
+  display: flex;
+  align-items: center;
+}
+.Process .process_01 .process_01_l .process_01_l_01 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  border-radius: 16px 16px 16px 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.Process .process_01 .process_01_l .process_01_l_01 .tex {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.Process .process_01 .process_01_r {
+  width: 88%;
+  font-size: 16px;
+  font-weight: 600;
+}
+.Process .process_01 .process_01_r .process_01_r_01 {
+  padding-bottom: 5px;
+}
+.Process .process_01 .process_01_r ._span {
+  font-size: 12px;
+  font-weight: 100;
+}
+

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item",
+    "price": "/components/common/price",
+    "uni-rate": "/components/uni-ui/uni-rate/uni-rate",
+    "divider": "/components/common/divider"
+  }
+}

@@ -9,17 +9,27 @@
 					<uni-forms-item label="密码" required name="password">
 						<uni-easyinput type="password" v-model="baseFormData.password" placeholder="请输入密码" />
 					</uni-forms-item>
-					<uni-forms-item label="类型" required name="type"><uni-data-checkbox v-model="baseFormData.type" :localdata="types" /></uni-forms-item>
+					<uni-forms-item label="类型" required name="type">
+						<view class="checkclass">
+							<uni-data-checkbox v-model="baseFormData.type" :localdata="types" />
+							
+						</view>
+						
+						</uni-forms-item>
 					<uni-forms-item label="头像" name="imgUrl">
-						<button class="uni-button" @click="upload">选择头像</button>
-						<img :src="baseFormData.imgUrl" alt="" srcset="" />
-					</uni-forms-item>
+						<view class="box">
+							<text class="chooseimg" @click="upload">选择头像</text>
+								<img :src="baseFormData.imgUrl" class="userimg" alt="" srcset="" />
+								<img v-if="baseFormData.imgUrl.length==0" src="../../static/userpic.png" class="userimg" alt="" srcset="" />
+							
+						</view>
+	</uni-forms-item>
 
 					<!-- <image :src="imageUrl"></image> -->
 					<!-- <button @click="submitimage">上传文件</button> -->
 				</uni-forms>
 
-				<button class="main-bg-color" @click="submit('baseForm')">注册</button>
+				<button class="main-bg-color" style="margin-top:10px;" @click="submit('baseForm')">注册</button>
 			</view>
 		</uni-section>
 	</view>
@@ -105,7 +115,9 @@ export default {
 		};
 	},
 	computed: {},
-	onLoad() {},
+	onLoad() {
+		console.log(this.baseFormData.imgUrl)
+	},
 	onReady() {
 		// 设置自定义表单校验规则，必须在节点渲染完毕后执行
 		this.$refs.baseForm.setRules(this.customRules);
@@ -137,11 +149,18 @@ export default {
 							console.log(res);
 							if (res.data.code == 0) {
 								uni.showToast({
-									title: `注册成功`
-								});
-								uni.navigateTo({
-									url: '../login/login'
-								});
+									title: `注册成功`,
+									success:()=>{
+									uni.navigateTo({
+										  url: '../login/login'
+									});	
+									}
+									
+								})
+								
+								
+								
+							
 							} else {
 								uni.showToast({
 									title: `注册失败`
@@ -249,5 +268,27 @@ export default {
 	display: inline-block;
 	width: 150rpx;
 	font-size: 12px;
+}
+.chooseimg{
+	padding:5px;
+	border:1px solid #ccc;
+	border-radius:2px;
+}
+.userimg{
+	width:64px;
+	height:64px;
+	border-radius:50%;
+	    position: absolute;
+	    left: 100px;
+	    top: -5px;
+	
+}
+.box{
+	padding:10px;
+
+}
+	
+.checkclass{
+	margin-top:7px;
 }
 </style>
