@@ -1,15 +1,13 @@
 <template>
 	<view class="navigation">
-		<view class="ad">
+		<!-- 	<view class="ad">
 			{{currentAddress}}
-		</view>
-		<button class="uni-button cus-btn " type="warn" @click="handleSendAddress">位置通知</button>
-		<view class="map">
-			<map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude"></map>
-			<!-- 	<map id="myMap" style="width: 100%; height: 280px;" :latitude="latitude" :longitude="longitude"
+		</view> -->
+		<!-- <button class="uni-button cus-btn " type="warn" @click="handleSendAddress">位置通知</button> -->
+		<map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude" :circles="circles" :markers="markers"></map>
+		<!-- 	<map id="myMap" style="width: 100%; height: 280px;" :latitude="latitude" :longitude="longitude"
 				:markers="markers" show-location></map> -->
-			<!-- <image src="@/imgs/ditu.png"></image> -->
-		</view>
+		<!-- <image src="@/imgs/ditu.png"></image> -->
 		<!-- 		<view class="mingxi qy-bg-white margin-bottom-sm">
 			<view class="mx">
 				<view class="mx_l qy-text-grey">预计送达</view>
@@ -76,23 +74,26 @@
 </template>
 
 <script>
-	import Process from "@/components/qy/process.vue"
-	import QQMapWX from "@/common/lib/qqmap-wx-jssdk.js"
-	// import amapFile from "@/common/lib/amap-wx.130.js"
-	// console.log(amapFile)
-	var amapFile = require('./libs/amap-wx.js')
-	// console.log(amap);
-	// var amap = require('./libs/amap.js')
-	// console.log(amap)
-	var qqmapsdk;
+	// import Process from "@/components/qy/process.vue"
+	// import QQMapWX from "@/common/lib/qqmap-wx-jssdk.js"
+	// // import amapFile from "@/common/lib/amap-wx.130.js"
+	// // console.log(amapFile)
+	// var amapFile = require('./libs/amap-wx.js')
+	// // console.log(amap);
+	// // var amap = require('./libs/amap.js')
+	// // console.log(amap)
+	// var qqmapsdk;
 	export default {
 		data() {
 			return {
 				currentAddress: '',
 				longitude: '',
-				latitude: ''
+				latitude: '',
+				circles:[],
+				markers:[]
 			}
 		},
+
 		onShow() {
 			// qqmapsdk = new QQMapWX({
 			// 	key: '5ZUBZ-M2XHJ-3LYFT-DGUNO-MYHH7-GSFAS'
@@ -140,9 +141,9 @@
 			// console.log(898)
 		},
 		onLoad() {
-
-			// this.getRules()
 			this.getLocation()
+			// this.getRules()
+			// this.getLocation()
 			// this.getSignRecord()
 
 
@@ -186,32 +187,65 @@
 		},
 
 		methods: {
-			async getLocation() {
-				var that = this;
-				var myAmapFun = new amapFile.AMapWX({
-					key: '025d7f19096f0221210279fd56518165',
-					secretKey:'629a3bc0406b091d7e143cb3afa90e76'
-				});
-				uni.showLoading()
-				myAmapFun.getRegeo({
-					success: function(data) {
-						let res = data[0]
-						that.currentLatitude = res.latitude
-						that.currentLongitude = res.longitude
-						that.currentAddress = res.regeocodeData.formatted_address
-						uni.hideLoading()
-						//成功回调
-					},
-					fail: function(info) {
-						uni.hideLoading()
-						//失败回调
-						console.log(info)
+			getLocation() {
+				let that = this
+				uni.getLocation({
+					type: 'wgs84',
+					success: function(res) {
+						console.log(res);
+						console.log('当前位置的经度：' + res.longitude);
+						console.log('当前位置的纬度：' + res.latitude);
+						that.longitude = res.longitude
+						that.latitude = res.latitude
+						that.setCircles()
 					}
+				});
+			},
+			setCircles(){
+				this.circles.push({
+					longitude: this.longitude,
+					latitude: this.latitude,
+					radius: 30
 				})
 			},
-
-
-
+			setMarkers(){
+				this.markers.push({
+					id: 1, // Number
+					title: '11111111111111', // String-标注点名
+					rotate: 180, // Number - 顺时针旋转的角度，范围 0 ~ 360，默认为 0
+					alpha: 1, // 默认1，无透明，范围 0 ~ 1
+					latitude: this.latitude,
+					longitude: this.longitude,
+					width: 30,
+					height: 30,
+					iconPath: '../../imgs/0.png'
+				})
+			}
+			// async getLocation() {
+			// 	debugger
+			// 	var that = this;
+			// 	var myAmapFun = new amapFile.AMapWX({
+			// 		key: '025d7f19096f0221210279fd56518165',
+			// 		secretKey: '629a3bc0406b091d7e143cb3afa90e76'
+			// 	});
+			// 	uni.showLoading()
+			// 	myAmapFun.getRegeo({
+			// 		success: function(data) {
+			// 			console.log(data);
+			// 			let res = data[0]
+			// 			that.currentLatitude = res.latitude
+			// 			that.currentLongitude = res.longitude
+			// 			that.currentAddress = res.regeocodeData.formatted_address
+			// 			uni.hideLoading()
+			// 			//成功回调
+			// 		},
+			// 		fail: function(info) {
+			// 			uni.hideLoading()
+			// 			//失败回调
+			// 			console.log(info)
+			// 		}
+			// 	})
+			// },
 
 			// chooseLocation() {
 			// 	let that = this
@@ -274,50 +308,50 @@
 			// },
 			// 再次获取授权
 			// 当用户第一次拒绝后再次请求授权
-			openConfirm() {
-				uni.showModal({
-					title: '请求授权当前位置',
-					content: '需要获取您的地理位置，请确认授权',
-					success: (res) => {
-						if (res.confirm) {
-							uni.openSetting(); // 打开地图权限设置
-						} else if (res.cancel) {
-							uni.showToast({
-								title: '你拒绝了授权，无法获得周边信息',
-								icon: 'none',
-								duration: 1000
-							})
-						}
-					}
-				});
-			},
-			toLocation: function(obj) {
-				// 改变地图中心位置
-				mapCtx.moveToLocation(obj)
-				// 移动标记点并添加动画效果
-				mapCtx.translateMarker({
-					markerId: 1,
-					autoRotate: true,
-					duration: 100,
-					destination: {
-						latitude: obj.latitude,
-						longitude: obj.longitude,
-					},
-					animationEnd() {
-						console.log('animation end')
-					}
-				})
-			},
+			// openConfirm() {
+			// 	uni.showModal({
+			// 		title: '请求授权当前位置',
+			// 		content: '需要获取您的地理位置，请确认授权',
+			// 		success: (res) => {
+			// 			if (res.confirm) {
+			// 				uni.openSetting(); // 打开地图权限设置
+			// 			} else if (res.cancel) {
+			// 				uni.showToast({
+			// 					title: '你拒绝了授权，无法获得周边信息',
+			// 					icon: 'none',
+			// 					duration: 1000
+			// 				})
+			// 			}
+			// 		}
+			// 	});
+			// },
+			// toLocation: function(obj) {
+			// 	// 改变地图中心位置
+			// 	mapCtx.moveToLocation(obj)
+			// 	// 移动标记点并添加动画效果
+			// 	mapCtx.translateMarker({
+			// 		markerId: 1,
+			// 		autoRotate: true,
+			// 		duration: 100,
+			// 		destination: {
+			// 			latitude: obj.latitude,
+			// 			longitude: obj.longitude,
+			// 		},
+			// 		animationEnd() {
+			// 			console.log('animation end')
+			// 		}
+			// 	})
+			// },
 			// 
-			poitap: function(e) {
-				console.log(e, "poitap")
-				var obj = e.detail
-				self.toLocation(obj)
-			}
+			// poitap: function(e) {
+			// 	console.log(e, "poitap")
+			// 	var obj = e.detail
+			// 	self.toLocation(obj)
+			// }
 		},
-		components: {
-			Process
-		}
+		// components: {
+		// 	Process
+		// }
 	}
 </script>
 
@@ -331,7 +365,8 @@
 
 	.navigation {
 		.map {
-			height: 300px;
+			height: calc(100vh - 44px);
+			width: 100%;
 
 			image {
 				width: 100%;
