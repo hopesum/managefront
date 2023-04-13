@@ -26,8 +26,8 @@
 					<view class="pare_01_l ">{{item.consignee}}-{{item.phone}}</view>
 					<view class="pare_01_r">尽快送达</view>
 				</view>
-				<view @click="jump_detail">
-					<Process :title="item.deliverAddress" ></Process>
+				<view @click="jump_detail(item)">
+					<Process v-if="item.deliverAddress" :title="item.deliverAddress" ></Process>
 				</view>
 				<view class="padding flex flex-direction">
 					<button class="cu-btn bg-yellow round " style="background-color:#ff8464"  @click="jump_fill(item.orderNo)">抢单</button>
@@ -44,7 +44,7 @@
 					<view class="">还剩45分钟送达</view>
 					<view class="pare_01_r">{{item.phone}}</view>
 				</view>
-				<Process :title="item.deliverAddress"></Process>
+				<Process v-if="item.deliverAddress" :title="item.deliverAddress"></Process>
 				<view class="bbtn padding">
 					<view class="flex flex-direction bbtn_10" >
 						<button class="cu-btn  round" @click="jump_cancel(item.orderNo)" style="background-color:rgba(248,23,26,.6)">取消配送</button>
@@ -145,14 +145,14 @@ this.getData()
 				// 	url: '/horseman/deliver/deliver'
 				// });
 			},
-			jump_detail(){
+			jump_detail(item){
 				uni.navigateTo({
-					url: '/horseman/detail/detail'
+					url: `../frontpersonorderdetail/frontpersonorderdetail?info=${JSON.stringify(item)}`
 				});
 			},
 			jump_coupon(){
 				uni.navigateTo({
-					url: '/horseman/coupon/coupon'
+					url: '../frontpersoncoupon/frontpersoncoupon'
 				});
 			},
 			jump_fill(no){

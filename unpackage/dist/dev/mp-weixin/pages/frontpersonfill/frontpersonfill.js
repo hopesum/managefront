@@ -99,14 +99,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var m0 = __webpack_require__(/*! @/imgs/shen.png */ 320)
-
-  var m1 = __webpack_require__(/*! @/imgs/shen.png */ 320)
-
-  var m2 = __webpack_require__(/*! @/imgs/shen.png */ 320)
-
-  var m3 = __webpack_require__(/*! @/imgs/shen.png */ 320)
-
+  var m0 = !_vm.oneimg ? __webpack_require__(/*! ../../imgs/shen.png */ 320) : null
+  var m1 = !_vm.twoimg ? __webpack_require__(/*! ../../imgs/shen.png */ 320) : null
+  var m2 = !_vm.threeimg ? __webpack_require__(/*! ../../imgs/shen.png */ 320) : null
+  var m3 = !_vm.fourimg ? __webpack_require__(/*! ../../imgs/shen.png */ 320) : null
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -151,7 +147,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -225,12 +227,17 @@ var _default =
 {
   data: function data() {
     return {
+      idnumber: "",
+      name: '',
+      sex: '男',
+      typeabout: '',
+      address: "",
       numList: [{
-        name: '实名认证' },
+        name: '基本信息' },
       {
-        name: '申请类型' },
+        name: '身份证明' },
       {
-        name: '现场培训' }],
+        name: '认证成功' }],
 
       num: 0,
       radio: 'A',
@@ -242,17 +249,188 @@ var _default =
         checked: true },
       {
         value: 'C',
-        checked: false }] };
+        checked: false }],
 
+      oneimg: '',
+      twoimg: '',
+      threeimg: "",
+      fourimg: "",
+      userid: '' };
 
   },
   methods: {
-    radioChange: function radioChange() {
+    radioChangetype: function radioChangetype(e) {
+      this.typeabout = e.target.value;
+    },
+    start: function start() {var _this = this;
+      uni.getStorage({
+        key: 'frontuserinfo',
+        success: function success(res) {
+          console.log(res.data.id);
+          _this.userid = res.data.id;
+        } });
 
+      var params = { name: this.name, sex: this.sex, idnumber: this.idnumber, typeabout: this.typeabout, address: this.address, oneimgurl: this.oneimg, twoimgurl: this.twoimg, threeimgurl: this.threeimg, fourimgurl: this.fourimg, userid: this.userid };
+      uni.request({
+        url: 'http://127.0.0.1:5000/deliveryman/adddeliveryInfo',
+        data: params,
+        method: 'POST',
+        success: function success(res) {
+          console.log(res);
+          if (res.data.code == 0) {
+            uni.showToast({
+              title: "\u5B9E\u540D\u6210\u529F",
+              success: function success() {
+                _this.NumSteps();
+                uni.navigateTo({
+                  url: '../aboutperson/aboutperson' });
+
+              } });
+
+
+
+
+
+
+          } else {
+            uni.showToast({
+              title: "\u6CE8\u518C\u5931\u8D25" });
+
+          }
+        } });
+
+
+    },
+    radioChange: function radioChange(e) {
+      this.sex = e.target.value;
+      console.log(this.name);
+      console.log(e, '男女');
     },
     NumSteps: function NumSteps() {
       this.num = this.num == this.numList.length - 1 ? 0 : this.num + 1;
+    },
+    uploadimgone: function uploadimgone() {var _this2 = this;
+      uni.chooseImage({
+        count: 1,
+        success: function success(res) {
+          console.log(res);var
+          tempFilePaths = res.tempFilePaths,tempFiles = res.tempFiles;
+          var file = tempFiles[0];
+
+          uni.uploadFile({
+            url: 'http://127.0.0.1:5000/deliveryman/deliveryimg_upload',
+            method: 'POST',
+            name: 'file',
+            filePath: tempFilePaths[0],
+            success: function success(res) {
+              var response = JSON.parse(res.data);
+              console.log(response, '************');
+              if (response.code === 0) {
+                uni.showToast({
+                  title: '上传成功' });
+
+                _this2.oneimg = 'http://127.0.0.1:5000' + response.imgUrl;
+              }
+            } });
+
+
+
+
+        } });
+
+    },
+    uploadimgtwo: function uploadimgtwo() {var _this3 = this;
+      uni.chooseImage({
+        count: 1,
+        success: function success(res) {
+          console.log(res);var
+          tempFilePaths = res.tempFilePaths,tempFiles = res.tempFiles;
+          var file = tempFiles[0];
+
+          uni.uploadFile({
+            url: 'http://127.0.0.1:5000/deliveryman/deliveryimg_upload',
+            method: 'POST',
+            name: 'file',
+            filePath: tempFilePaths[0],
+            success: function success(res) {
+              var response = JSON.parse(res.data);
+              console.log(response, '************');
+              if (response.code === 0) {
+                uni.showToast({
+                  title: '上传成功' });
+
+                _this3.twoimg = 'http://127.0.0.1:5000' + response.imgUrl;
+              }
+            } });
+
+
+
+
+        } });
+
+    },
+    uploadimgthree: function uploadimgthree() {var _this4 = this;
+      uni.chooseImage({
+        count: 1,
+        success: function success(res) {
+          console.log(res);var
+          tempFilePaths = res.tempFilePaths,tempFiles = res.tempFiles;
+          var file = tempFiles[0];
+
+          uni.uploadFile({
+            url: 'http://127.0.0.1:5000/deliveryman/deliveryimg_upload',
+            method: 'POST',
+            name: 'file',
+            filePath: tempFilePaths[0],
+            success: function success(res) {
+              var response = JSON.parse(res.data);
+              console.log(response, '************');
+              if (response.code === 0) {
+                uni.showToast({
+                  title: '上传成功' });
+
+                _this4.threeimg = 'http://127.0.0.1:5000' + response.imgUrl;
+              }
+            } });
+
+
+
+
+        } });
+
+    },
+    uploadimgfour: function uploadimgfour() {var _this5 = this;
+      uni.chooseImage({
+        count: 1,
+        success: function success(res) {
+          console.log(res);var
+          tempFilePaths = res.tempFilePaths,tempFiles = res.tempFiles;
+          var file = tempFiles[0];
+
+          uni.uploadFile({
+            url: 'http://127.0.0.1:5000/deliveryman/deliveryimg_upload',
+            method: 'POST',
+            name: 'file',
+            filePath: tempFilePaths[0],
+            success: function success(res) {
+              var response = JSON.parse(res.data);
+              console.log(response, '************');
+              if (response.code === 0) {
+                uni.showToast({
+                  title: '上传成功' });
+
+                _this5.fourimg = 'http://127.0.0.1:5000' + response.imgUrl;
+                _this5.NumSteps();
+              }
+            } });
+
+
+
+
+        } });
+
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

@@ -14,8 +14,9 @@
 		<view class="buzhou qy-bg-white margin-bottom-sm">
 			<view class="bz margin-bottom">
 				<view class="bz_l">
-					<view class="bz_l_01">联系发货人</view>
-					<view class="bz_l_02 qy-text-grey">清闲联系发货人确定地址和时间</view>
+					<view class="bz_l_01">联系商家</view>
+					<view class="bz_l_02 qy-text-grey">山河饼局-19838035004</view>
+					<view class="bz_l_02 qy-text-grey">请先联系商家确定地址和时间</view>
 				</view>
 				<view class="bz_r">
 					<button class="cu-btn round bg-yellow" @click="ontel()">一键拨号</button>
@@ -24,7 +25,7 @@
 			<view class="bz margin-bottom">
 				<view class="bz_l">
 					<view class="bz_l_01">我已到达</view>
-					<view class="bz_l_02 qy-text-grey">到达获取货物后点击</view>
+					<view class="bz_l_02 qy-text-grey">到达获取外卖后点击</view>
 				</view>
 				<view class="bz_r">
 					<button class="cu-btn round bg-yellow" >我已到达</button>
@@ -32,8 +33,8 @@
 			</view>
 			<view class="bz margin-bottom">
 				<view class="bz_l">
-					<view class="bz_l_01">拍照取货</view>
-					<view class="bz_l_02 qy-text-grey">到达获取货物后点击</view>
+					<view class="bz_l_01">拍照取物</view>
+					<view class="bz_l_02 qy-text-grey">到达获取外卖后点击</view>
 				</view>
 				<view class="bz_r">
 					<button class="cu-btn round lines-grey" >拍照取货</button>
@@ -43,20 +44,20 @@
 		</view>
 		<view class="mingxi qy-bg-white">
 			<view class="mx">
-				<view class="mx_l qy-text-grey">物品明细</view>
-				<view class="mx_r">文件/6千克</view>
+				<view class="mx_l qy-text-grey">收货人名字:</view>
+				<view class="mx_r">{{orderinfo.consignee?orderinfo.consignee:'孙女士'}}</view>
 			</view>
 			<view class="mx">
-				<view class="mx_l qy-text-grey">订单号码</view>
-				<view class="mx_r">123123123</view>
+				<view class="mx_l qy-text-grey">订单号码:</view>
+				<view class="mx_r">{{orderinfo.orderNo?orderinfo.orderNo:'10553'}}</view>
 			</view>
 			<view class="mx">
-				<view class="mx_l qy-text-grey">预计送达</view>
-				<view class="mx_r">2019/11/06 08:20</view>
+				<view class="mx_l qy-text-grey">预计送达:</view>
+				<view class="mx_r">{{orderinfo.deliveryTime?orderinfo.deliveryTime:'2023-4-18'}}</view>
 			</view>
 			<view class="mx">
-				<view class="mx_l qy-text-grey">备注信息</view>
-				<view class="mx_r">无</view>
+				<view class="mx_l qy-text-grey">备注信息:</view>
+				<view class="mx_r">{{orderinfo.remarks?orderinfo.remarks:'无'}}</view>
 			</view>
 		</view>
 		<view class="bbtn padding qy-bg-white">
@@ -74,8 +75,14 @@
 	export default {
 		data() {
 			return {
-				tel:'123'
+				tel:'19838035004',
+				orderinfo:{}
 			};
+		},
+		onLoad(e){
+			console.log(e),
+			this.orderinfo= JSON.parse(e.info)
+			console.log(this.orderinfo,998)
 		},
 		methods:{
 			jump_navigation(){
@@ -86,7 +93,7 @@
 			ontel(){
 				const phone=this.tel
 			    uni.makePhoneCall({
-			     phoneNumber: phone
+			     phoneNumber:phone
 			    });
 			}
 		}

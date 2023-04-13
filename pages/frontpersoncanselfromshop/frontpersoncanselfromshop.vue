@@ -10,9 +10,9 @@
 		</view>
 		<view class="ddps">
 			<view class="ddps_l">订单配送</view>
-			<view class="ddps_r">#19</view>
+			<view class="ddps_r">{{ '1'+parseInt(Math.random()*10000)}}</view>
 		</view>
-		<Process ></Process>
+		<Process :title="address[parseInt(Math.random()*7)]"></Process>
 		<view class="time qy-bg-white margin-top-sm">
 			<view class="time_l ">
 				<view class="time_l_01 ">抢单</view>
@@ -20,17 +20,17 @@
 			</view>
 			<view class="time_m"></view>
 			<view class="time_l ">
-				<view class="time_r_01">到点</view>
-				<view class="time_r_02">11:25</view>
+				<view class="time_r_01">预估</view>
+				<view class="time_r_02">25分钟</view>
 			</view>
 			<view class="time_m"></view>
 			<view class="time_l ">
 				<view class="time_r_01">到点</view>
-				<view class="time_r_02">11:25</view>
+				<view class="time_r_02">11:27</view>
 			</view>
 		</view>
 		<view class="padding flex flex-direction margin-top-sm">
-			<button class="cu-btn bg-yellow round lg">联系商家</button>
+			<button class="cu-btn bg-yellow round lg" @click="tohome">我知道了</button>
 		</view>
 	</view>
 </template>
@@ -40,11 +40,18 @@
 	export default {
 		data() {
 			return {
-				
-			};
+				address:['陇海西路163号院2单元西','颖河路101号院2单元','金龙化101','玉华百货','郑州轻工业大学科学小区1号楼','郑州轻工业大学东风校区西区1','青年书店']
+			}
 		},
 		components:{
 			Process
+		},
+		methods:{
+			tohome(){
+				uni.navigateTo({
+					url:"../aboutperson/aboutperson"
+				})
+			}
 		}
 	}
 </script>

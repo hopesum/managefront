@@ -28,7 +28,8 @@
     "pages/frontpersonnavigate/frontpersonnavigate",
     "pages/frontpersoncancel/frontpersoncancel",
     "pages/frontpersoncanselfromshop/frontpersoncanselfromshop",
-    "pages/frontpersonorderdetail/frontpersonorderdetail"
+    "pages/frontpersonorderdetail/frontpersonorderdetail",
+    "pages/frontpersoncoupon/frontpersoncoupon"
   ],
   "subPackages": [],
   "window": {
@@ -69,6 +70,15 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "外卖员定位功能"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
   "usingComponents": {
     "loading-plus": "/common/mixin/loading-plus",
     "divider": "/components/common/divider",

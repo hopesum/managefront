@@ -143,7 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Process = function Process() {__webpack_require__.e(/*! require.ensure | components/qy/process */ "components/qy/process").then((function () {return resolve(__webpack_require__(/*! @/components/qy/process.vue */ 518));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Process = function Process() {__webpack_require__.e(/*! require.ensure | components/qy/process */ "components/qy/process").then((function () {return resolve(__webpack_require__(/*! @/components/qy/process.vue */ 528));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -290,14 +290,14 @@ __webpack_require__.r(__webpack_exports__);
       // 	url: '/horseman/deliver/deliver'
       // });
     },
-    jump_detail: function jump_detail() {
+    jump_detail: function jump_detail(item) {
       uni.navigateTo({
-        url: '/horseman/detail/detail' });
+        url: "../frontpersonorderdetail/frontpersonorderdetail?info=".concat(JSON.stringify(item)) });
 
     },
     jump_coupon: function jump_coupon() {
       uni.navigateTo({
-        url: '/horseman/coupon/coupon' });
+        url: '../frontpersoncoupon/frontpersoncoupon' });
 
     },
     jump_fill: function jump_fill(no) {

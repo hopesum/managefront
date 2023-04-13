@@ -269,6 +269,16 @@
             }
             
         }
+        
+        ,{
+            "path" : "pages/frontpersoncoupon/frontpersoncoupon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "骑手专属券",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

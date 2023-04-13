@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! @/components/common/common-list.vue */ 376));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var indexNav = function indexNav() {__webpack_require__.e(/*! require.ensure | components/index/index-nav */ "components/index/index-nav").then((function () {return resolve(__webpack_require__(/*! @/components/index/index-nav.vue */ 381));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! @/components/common/common-list.vue */ 386));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var indexNav = function indexNav() {__webpack_require__.e(/*! require.ensure | components/index/index-nav */ "components/index/index-nav").then((function () {return resolve(__webpack_require__(/*! @/components/index/index-nav.vue */ 391));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

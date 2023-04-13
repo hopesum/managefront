@@ -12,10 +12,10 @@
 			:class="[xuan==3?'lines-yellow' :'lines-gray' ]">车坏了/没电等意外</button>
 		</view>
 		<view class="qita">
-			<textarea maxlength="-1" :disabled="modalName!=null" @input="textareaAInput" placeholder="其他取消理由"></textarea>
+			<textarea maxlength="99"  placeholder="其他取消理由"></textarea>
 		</view>
 		<view class="padding flex flex-direction margin-top-xl ">
-			<button class="cu-btn bg-yellow lg round">确认取消</button>
+			<button class="cu-btn bg-yellow lg round" @click="cancelorder">确认取消</button>
 		</view>
 		<view class="liaojie qy-text-grey"><view class="iconfont icon-bangzhu"></view>了解取消规则</view>
 	</view>
@@ -25,8 +25,24 @@
 	export default {
 		data() {
 			return {
-				xuan:0
+				xuan:0,
+				modalName:''
 			};
+		},
+		methods:{
+			cancelorder(){
+				uni.showToast({
+					title:"订单已取消",
+					success:(res)=>{
+						setTimeout(()=>{
+						uni.navigateTo({
+							url:"../aboutperson/aboutperson"
+						})	
+						},1000)
+						
+					}
+				})
+			}
 		}
 	}
 </script>

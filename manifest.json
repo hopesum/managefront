@@ -50,12 +50,23 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wxf661b474253191d1",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck": true,
+            		"es6": true,
+            		"postcss": true,
+            		"minified": true
+
         },
-        "usingComponents" : true
-    },
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "外卖员定位功能"
+            }
+        },
+	  "requiredPrivateInfos": ["getLocation", "chooseLocation"]
+		
+	 },
     "mp-alipay" : {
         "usingComponents" : true
     },
@@ -80,9 +91,27 @@
         "router" : {
             "base" : "./"
         },
-		"devServer":{
-			"disableHostCheck":true
-		
-		}
+        "devServer" : {
+            // "port" : 8080, //浏览器运行端口
+            "https" : false,
+            "proxy" : {
+                "/ws" : {
+                    "target" : "https://apis.map.qq.com",
+                    "changeOrigin" : true,
+                    "secure" : false,
+                    "pathRewrite" : {
+                        "^/ws" : ""
+                    }
+                },
+                "/baseUrlBuild" : {
+                    "target" : "http://zhbz-test.xxx.com",
+                    "changeOrigin" : true,
+                    "secure" : false,
+                    "pathRewrite" : {
+                        "^/baseUrlBuild" : "" //路径重写，将接口路径中以/api开头的部分替换掉
+                    }
+                }
+            }
+        }
     }
 }

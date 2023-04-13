@@ -19,7 +19,7 @@
 		</view>
 		<view class="process_01_r">
 			<view class="process_01_r_01">地址</view>
-			<span>{{newtitle}}</span>
+			<span>{{title}}</span>
 		</view>
 	</view>
   </view>
