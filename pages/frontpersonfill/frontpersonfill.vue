@@ -15,10 +15,17 @@
 			<view class="cu-form-group " style="justify-content: flex-start;">
 				<view class="title">性<span class="padding-left padding-right"></span>&nbsp;&nbsp;别：&nbsp;</view>
 				<view> 
+<<<<<<< HEAD
+					<radio-group  @change="radioChange">
+						<radio :disabled="isfill"  name="name1" class="radio" :checked="radio=='男'?true:false" value="男"></radio>男
+						<span class="padding-left"></span>
+						<radio :disabled="isfill" name="name1" class='radio' :checked="radio=='女'?true:false" value="女"></radio>女
+=======
 					<radio-group @change="radioChange">
 						<radio name="name1" class="radio" :checked="radio=='男'?true:false" value="男"></radio>男
 						<span class="padding-left"></span>
 						<radio name="name1" class='radio' :checked="radio=='女'?true:false" value="女"></radio>女
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 					</radio-group>
 				</view>
 
@@ -27,9 +34,15 @@
 				<view class="title">申请业务：</view>
 				<view> 
 					<radio-group @change="radioChangetype">
+<<<<<<< HEAD
+						<radio :disabled="isfill" name="name1" class="radio" :checked="radiotype=='外卖'?true:false" value="外卖"></radio>外卖
+						<span class="padding-left-sm"></span>
+						<radio :disabled="isfill" name="name1" class='radio' :checked="radiotype=='其它'?true:false" value="其它"></radio>其它
+=======
 						<radio name="name1" class="radio" :checked="radio=='外卖'?true:false" value="外卖"></radio>外卖
 						<span class="padding-left-sm"></span>
 						<radio name="name1" class='radio' :checked="radio=='其它'?true:false" value="其它"></radio>其它
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 						<span class="padding-left-sm"></span>
 					<!-- 	<radio name="name1" class='radio' :checked="radio=='B'?true:false" value="B"></radio>货运
 						<span class="padding-left-sm"></span>
@@ -69,7 +82,12 @@
 				请上传个人自拍照
 			</view>
 		</view>
+<<<<<<< HEAD
+	<button v-if="!isfill" class="addressbtn" style="background-color:royalblue" @click="start">开始认证</button>
+	<button v-if="isfill" class="addressbtn" style="background-color:limegreen" disabled="true">认证已完成</button>
+=======
 	<button class="addressbtn" style="background-color:royalblue" @click="start">开始认证</button>
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 		
 	</view>
 </template>
@@ -91,6 +109,15 @@
 					name: '认证成功'
 				}, ],
 				num: 0,
+<<<<<<< HEAD
+				radio: '',
+				radiotype:'',
+				checkbox: [{
+					value: '外卖',
+					checked: true
+				}, {
+					value: '其他',
+=======
 				radio: 'A',
 				checkbox: [{
 					value: 'A',
@@ -100,16 +127,68 @@
 					checked: true
 				}, {
 					value: 'C',
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 					checked: false
 				}],
 				oneimg:'',
 				twoimg:'',
 				threeimg:"",
 				fourimg:"",
+<<<<<<< HEAD
+				userid:'',
+				isfill:false
+			};
+		},
+		onShow(){
+			this.getData()
+		},
+		onLoad(){
+			console.log(this.isfill)
+			this.getData()
+	},
+		methods:{
+			getData(){
+				uni.getStorage({
+							key:'frontuserinfo',
+							success:(res)=>{
+								console.log(res.data.id)
+								this.userid=res.data.id
+							}
+						})
+					uni.request({
+						url:'http://127.0.0.1:5000/deliveryman/getdeliveryInfo',
+						method:"GET",
+							data:{userid:this.userid},
+						success:(res)=>{
+							console.log(res,'haohao')
+							if(res.data.data.length!=0){
+								console.log(985211)
+								this.isfill=true
+								const { oneimgurl,twoimgurl,threeimgurl,fourimgurl,name,sex,idnumber,address,typeabout,userid}=res.data.data[0]
+								
+								this.oneimg=oneimgurl
+								this.twoimg=twoimgurl
+								this.threeimg=threeimgurl
+								this.fourimg=fourimgurl
+								this.name=name
+								this.sex=sex
+								this.idnumber=idnumber
+								this.address=address
+								this.typeabout=typeabout
+								this.num=3
+								this.radio=sex
+								this.radiotype=typeabout
+							}
+						}
+					})	
+				
+			},
+=======
 				userid:''
 			};
 		},
 		methods:{
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 			radioChangetype(e){
 				this.typeabout=e.target.value
 			},

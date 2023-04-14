@@ -214,7 +214,11 @@ __webpack_require__.r(__webpack_exports__);
 var _qqmapWxJssdk = _interopRequireDefault(__webpack_require__(/*! @/common/lib/qqmap-wx-jssdk.js */ 331));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var Process = function Process() {__webpack_require__.e(/*! require.ensure | components/qy/process */ "components/qy/process").then((function () {return resolve(__webpack_require__(/*! @/components/qy/process.vue */ 528));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 // import amapFile from "@/common/lib/amap-wx.130.js"
 // console.log(amapFile)
+<<<<<<< HEAD
+var amapFile = __webpack_require__(/*! ./libs/amap-wx.js */ 332);
+=======
 var amapFile = __webpack_require__(/*! ./libs/amap-wx.js */ 728);
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 // console.log(amap);
 // var amap = require('./libs/amap.js')
 // console.log(amap)

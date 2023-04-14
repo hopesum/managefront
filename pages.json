@@ -279,6 +279,18 @@
             }
             
         }
+<<<<<<< HEAD
+        ,{
+            "path" : "pages/myinfo/myinfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个人资料",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+=======
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

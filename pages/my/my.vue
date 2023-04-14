@@ -64,8 +64,13 @@
 			leftIcon="icon-xihuan" title="我的点赞" @click="openlike"></uni-list-item>
 			<uni-list-item showExtraIcon leftIconStyle="color:#FE8B42;"
 			leftIcon="icon-home" title="收获地址" @click="openaddress"></uni-list-item>
+<<<<<<< HEAD
+			<uni-list-item showExtraIcon leftIconStyle="color:#9ED45A;"
+			leftIcon="icon-xiaoxi" title="问题反馈" @click="openfaceback"></uni-list-item>
+=======
 			<!-- <uni-list-item showExtraIcon leftIconStyle="color:#9ED45A;"
 			leftIcon="icon-xiaoxi" title="问题反馈" @click="openfaceback"></uni-list-item> -->
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 			<uni-list-item showExtraIcon leftIconStyle="color:#9ED45A;" v-if="userInfo.type==1"
 			leftIcon="icon-gengduo" title="更多功能" @click="openpersonlist"></uni-list-item>
 			<divider></divider>

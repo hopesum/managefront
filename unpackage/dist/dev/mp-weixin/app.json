@@ -74,6 +74,19 @@
     "scope.userLocation": {
       "desc": "外卖员定位功能"
     }
+<<<<<<< HEAD
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation",
+    "requiredPrivateInfos"
+  ],
+  "usingComponents": {
+    "loading-plus": "/common/mixin/loading-plus",
+    "divider": "/components/common/divider",
+    "loading": "/components/common/loading"
+=======
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
   },
   "requiredPrivateInfos": [
     "getLocation",

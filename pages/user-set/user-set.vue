@@ -1,7 +1,11 @@
 <template>
 	<view>
 		<card  headTitle="账号管理" bodyStyle="background:#ffffff;">
+<<<<<<< HEAD
+			<uni-list-item title="个人资料" @click="tomyinfo"></uni-list-item>
+=======
 			<uni-list-item title="个人资料" @click="navigate(item.path)"></uni-list-item>
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 		</card>
 		
 		
@@ -46,6 +50,14 @@
 			})
 		},
 		methods: {
+<<<<<<< HEAD
+			tomyinfo(){
+				uni.navigateTo({
+					url:'../myinfo/myinfo'
+				})
+			},
+=======
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 			...mapMutations(['logout','clearCart']),
 			navigate(path){
 				if (!path) return;

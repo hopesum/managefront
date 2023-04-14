@@ -21,6 +21,16 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+<<<<<<< HEAD
+        },
+        {
+          "name": "",
+          "pathName": "pages/frontpersonnavigate/frontpersonnavigate",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+=======
+>>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
         }
       ]
     }
