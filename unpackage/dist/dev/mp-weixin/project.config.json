@@ -1,13 +1,13 @@
 {
-  "description": "项目配置文件。",
+  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "packOptions": {
-    "ignore": []
+    "ignore": [],
+    "include": []
   },
   "setting": {
     "urlCheck": true,
     "es6": true,
     "postcss": true,
-<<<<<<< HEAD
     "minified": true,
     "coverView": true,
     "lazyloadPlaceholderEnable": false,
@@ -29,42 +29,15 @@
       "outputPath": ""
     },
     "disableUseStrict": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.30.1",
-=======
-    "minified": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "",
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
+  "libVersion": "2.31.0",
   "appid": "wxf661b474253191d1",
   "projectname": "sellmanage",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
-    }
-<<<<<<< HEAD
-  },
+  "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-=======
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
   }
 }

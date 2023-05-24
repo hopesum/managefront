@@ -1,7 +1,5 @@
 {
-  "navigationBarTitleText": "骑手导航",
+  "navigationBarTitleText": "骑手定位",
   "enablePullDownRefresh": false,
-  "usingComponents": {
-    "process": "/components/qy/process"
-  }
+  "usingComponents": {}
 }

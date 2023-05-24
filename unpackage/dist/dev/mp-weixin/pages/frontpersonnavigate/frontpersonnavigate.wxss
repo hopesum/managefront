@@ -32,7 +32,8 @@
   margin-top: 10px;
 }
 .navigation .map {
-  height: 300px;
+  height: calc(100vh - 250px);
+  width: 100%;
 }
 .navigation .map image {
   width: 100%;

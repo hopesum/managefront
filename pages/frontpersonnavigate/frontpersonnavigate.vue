@@ -1,56 +1,43 @@
 <template>
 	<view class="navigation">
-<<<<<<< HEAD
-		<view class="ad">
-			{{currentAddress}}
-		</view>
-		<button class="uni-button cus-btn " type="warn" @click="handleSendAddress">位置通知</button>
-		<view class="map">
-			<map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude"></map>
-			<!-- 	<map id="myMap" style="width: 100%; height: 280px;" :latitude="latitude" :longitude="longitude"
-				:markers="markers" show-location></map> -->
-			<!-- <image src="@/imgs/ditu.png"></image> -->
-		</view>
-=======
 		<!-- 	<view class="ad">
 			{{currentAddress}}
 		</view> -->
 		<!-- <button class="uni-button cus-btn " type="warn" @click="handleSendAddress">位置通知</button> -->
-		<map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude" :circles="circles" :markers="markers"></map>
-		<!-- 	<map id="myMap" style="width: 100%; height: 280px;" :latitude="latitude" :longitude="longitude"
-				:markers="markers" show-location></map> -->
-		<!-- <image src="@/imgs/ditu.png"></image> -->
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
-		<!-- 		<view class="mingxi qy-bg-white margin-bottom-sm">
+		<map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude" :circles="circles" :markers="markers" @markertap="addressclick"></map>
+	
+	
+				<view class="mingxi qy-bg-white margin-bottom-sm">
 			<view class="mx">
 				<view class="mx_l qy-text-grey">预计送达</view>
-				<view class="mx_r">2019/11/06 08:20（58分钟内送达）</view>
+				<view class="mx_r">{{orderinfo.deliveryTime?orderinfo.deliveryTime:'暂无'}}</view>
 			</view>
 			<view class="mx">
-				<view class="mx_l qy-text-grey">距离取货点</view>
-				<view class="mx_r">1.4km</view>
+				<view class="mx_l qy-text-grey">取物点</view>
+				<view class="mx_r">山河饼局</view>
 			</view>
 			<view class="mx">
-				<view class="mx_l qy-text-grey">预估重量</view>
-				<view class="mx_r">1kg</view>
+				<view class="mx_l qy-text-grey">送达地点</view>
+				<view class="mx_r">{{orderinfo.deliverAddress?orderinfo.deliverAddress:"暂无"}}</view>
 			</view>
 		</view>
-		<Process></Process>
+		<!-- <Process>```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````</Process> -->
 		<view class="mingxi qy-bg-white margin-top-sm">
 			<view class="mx">
-				<view class="mx_l qy-text-grey">物品明细</view>
-				<view class="mx_r">文件</view>
+				<view class="mx_l qy-text-grey">订单状态</view>
+				<view class="mx_r">{{orderinfo.orderState?orderinfo.orderState:'暂无'}}</view>
+			
 			</view>
 			<view class="mxs">
-				<view class="mxs_l qy-text-grey">距离取货点</view>
+				<view class="mxs_l qy-text-grey">订单号</view>
 				<view class="mxs_r">
-					<view class="mxs_r_01">12321321</view>
+					<view class="mxs_r_01">{{orderinfo.orderNo?orderinfo.orderNo:'暂无'}}</view>
 					<view class="mxs_r_02 qy-text-grey">复制</view>
 				</view>
 			</view>
 			<view class="mx">
 				<view class="mx_l qy-text-grey">备注</view>
-				<view class="mx_r">这里是备注</view>
+				<view class="mx_r">{{orderinfo.remarks?orderinfo.remarks:'暂无'}}</view>
 			</view>
 			<view class="mxs">
 				<view class="mxs_l qy-text-grey">收入详情</view>
@@ -80,24 +67,13 @@
 				<view class="foot_l_01 qy-text-red">¥<span>2.5</span></view>
 				<view class="foot_l_02">小费 ¥ 2.0</view>
 			</view>
-			<view class="foot_r"><button class="cu-btn round bg-yellow">立即抢单</button></view>
+			<view class="foot_r"><button class="cu-btn round bg-yellow" @click="jump_fill(orderinfo.orderNo)">立即抢单</button></view>
 		</view>
-	 -->
+	 
 	</view>
 </template>
 
 <script>
-<<<<<<< HEAD
-	import Process from "@/components/qy/process.vue"
-	import QQMapWX from "@/common/lib/qqmap-wx-jssdk.js"
-	// import amapFile from "@/common/lib/amap-wx.130.js"
-	// console.log(amapFile)
-	var amapFile = require('./libs/amap-wx.js')
-	// console.log(amap);
-	// var amap = require('./libs/amap.js')
-	// console.log(amap)
-	var qqmapsdk;
-=======
 	// import Process from "@/components/qy/process.vue"
 	// import QQMapWX from "@/common/lib/qqmap-wx-jssdk.js"
 	// // import amapFile from "@/common/lib/amap-wx.130.js"
@@ -107,24 +83,18 @@
 	// // var amap = require('./libs/amap.js')
 	// // console.log(amap)
 	// var qqmapsdk;
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 	export default {
 		data() {
 			return {
 				currentAddress: '',
 				longitude: '',
-<<<<<<< HEAD
-				latitude: ''
-			}
-		},
-=======
 				latitude: '',
 				circles:[],
-				markers:[]
+				markers:[],
+				orderinfo:{}
 			}
 		},
 
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 		onShow() {
 			// qqmapsdk = new QQMapWX({
 			// 	key: '5ZUBZ-M2XHJ-3LYFT-DGUNO-MYHH7-GSFAS'
@@ -172,15 +142,10 @@
 			// console.log(898)
 		},
 		onLoad() {
-<<<<<<< HEAD
-
-			// this.getRules()
 			this.getLocation()
-=======
-			this.getLocation()
+			this.getnessinfo()
 			// this.getRules()
 			// this.getLocation()
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 			// this.getSignRecord()
 
 
@@ -224,34 +189,42 @@
 		},
 
 		methods: {
-<<<<<<< HEAD
-			async getLocation() {
-				var that = this;
-				var myAmapFun = new amapFile.AMapWX({
-					key: '025d7f19096f0221210279fd56518165',
-					secretKey:'629a3bc0406b091d7e143cb3afa90e76'
-				});
-				uni.showLoading()
-				myAmapFun.getRegeo({
-					success: function(data) {
-						let res = data[0]
-						that.currentLatitude = res.latitude
-						that.currentLongitude = res.longitude
-						that.currentAddress = res.regeocodeData.formatted_address
-						uni.hideLoading()
-						//成功回调
-					},
-					fail: function(info) {
-						uni.hideLoading()
-						//失败回调
-						console.log(info)
+			jump_fill(no){
+				uni.request({
+					url:"http://127.0.0.1:5000/order/editorderstate",
+					method:'POST',
+					data:{orderNo:no,orderState:'配送中'},
+					success:(res)=>{
+						console.log(res,"真好")
+						uni.showToast({
+							title:'抢单成功',
+							success:()=>{
+								setTimeout(()=>{
+								uni.navigateTo({
+									url: '../horsemanindex/horsemanindex'
+								});	
+								},1000)
+							}
+						})
+					}
+				})
+		
+				
+			},
+			getnessinfo(){
+				uni.getStorage({
+					key:'orderinfodelivery',
+					success:(res)=>{
+						// const result=JSON.parse(res.info)
+						console.log(res.data,888,996)
+						this.orderinfo=JSON.parse(res.data)
 					}
 				})
 			},
-
-
-
-=======
+			addressclick(){
+				console.log('点击了目标位置')
+			// console.log(e,'点击了目标位置')	
+			},
 			getLocation() {
 				let that = this
 				uni.getLocation({
@@ -270,7 +243,7 @@
 				this.circles.push({
 					longitude: this.longitude,
 					latitude: this.latitude,
-					radius: 30
+					radius: 20
 				})
 			},
 			setMarkers(){
@@ -283,7 +256,7 @@
 					longitude: this.longitude,
 					width: 30,
 					height: 30,
-					iconPath: '../../imgs/0.png'
+					iconPath: '../../imgs/0.jpg'
 				})
 			}
 			// async getLocation() {
@@ -311,7 +284,6 @@
 			// 		}
 			// 	})
 			// },
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 
 			// chooseLocation() {
 			// 	let that = this
@@ -374,52 +346,6 @@
 			// },
 			// 再次获取授权
 			// 当用户第一次拒绝后再次请求授权
-<<<<<<< HEAD
-			openConfirm() {
-				uni.showModal({
-					title: '请求授权当前位置',
-					content: '需要获取您的地理位置，请确认授权',
-					success: (res) => {
-						if (res.confirm) {
-							uni.openSetting(); // 打开地图权限设置
-						} else if (res.cancel) {
-							uni.showToast({
-								title: '你拒绝了授权，无法获得周边信息',
-								icon: 'none',
-								duration: 1000
-							})
-						}
-					}
-				});
-			},
-			toLocation: function(obj) {
-				// 改变地图中心位置
-				mapCtx.moveToLocation(obj)
-				// 移动标记点并添加动画效果
-				mapCtx.translateMarker({
-					markerId: 1,
-					autoRotate: true,
-					duration: 100,
-					destination: {
-						latitude: obj.latitude,
-						longitude: obj.longitude,
-					},
-					animationEnd() {
-						console.log('animation end')
-					}
-				})
-			},
-			// 
-			poitap: function(e) {
-				console.log(e, "poitap")
-				var obj = e.detail
-				self.toLocation(obj)
-			}
-		},
-		components: {
-			Process
-		}
-=======
 			// openConfirm() {
 			// 	uni.showModal({
 			// 		title: '请求授权当前位置',
@@ -464,7 +390,6 @@
 		// components: {
 		// 	Process
 		// }
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 	}
 </script>
 
@@ -478,12 +403,10 @@
 
 	.navigation {
 		.map {
-<<<<<<< HEAD
-			height: 300px;
-=======
-			height: calc(100vh - 44px);
+			// height: calc(100vh - 44px);
+			height: calc(100vh - 250px);
+			// height:50%;
 			width: 100%;
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 
 			image {
 				width: 100%;

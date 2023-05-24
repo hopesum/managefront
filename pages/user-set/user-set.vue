@@ -1,11 +1,7 @@
 <template>
 	<view>
 		<card  headTitle="账号管理" bodyStyle="background:#ffffff;">
-<<<<<<< HEAD
 			<uni-list-item title="个人资料" @click="tomyinfo"></uni-list-item>
-=======
-			<uni-list-item title="个人资料" @click="navigate(item.path)"></uni-list-item>
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 		</card>
 		
 		
@@ -34,8 +30,8 @@
 		data() {
 			return {
 				list:[
-					{ title:"关于店铺",path:"about" },
-					{ title:"意见反馈",path:"" },
+					{ title:"关于店铺",path:"shop" },
+					{ title:"意见反馈",path:"backface" },
 					{ title:"协议规则",path:"" },
 					{ title:"资质证件",path:"" },
 					{ title:"用户协议",path:"" },
@@ -50,19 +46,16 @@
 			})
 		},
 		methods: {
-<<<<<<< HEAD
 			tomyinfo(){
 				uni.navigateTo({
 					url:'../myinfo/myinfo'
 				})
 			},
-=======
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 			...mapMutations(['logout','clearCart']),
 			navigate(path){
 				if (!path) return;
 				uni.navigateTo({
-					url: `/pages/${path}/${path}`
+					url: `../${path}/${path}`
 				});
 			},
 			// 退出登录

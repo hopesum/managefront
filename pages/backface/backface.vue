@@ -1,6 +1,5 @@
 <template>
 	<view>
-<<<<<<< HEAD
 		<divider></divider>
 		<card headTitle="商家寄语" cardStyle="background:#ffffff;">
 			<view class="d-flex a-center px-3 py-2">
@@ -40,14 +39,10 @@
 			</view>
 		</view>
 		
-=======
-	反馈
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 	</view>
 </template>
 
 <script>
-<<<<<<< HEAD
 	import card from '@/components/common/card.vue';
 	import zcmRadioGroup from '@/components/common/radio-group.vue';
 	export default {
@@ -95,76 +90,12 @@
 			
 				
 			}
-=======
-	 import { io } from "@/socket.io-client.js";
-	
-	  // const socket = io();
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		onShow(){
-			console.log('7984651')
-			// let connection = io.connect('ws://localhost:8080');
-			 
-			//         connection.on('test',(str)=>{
-			//     		console.log(str)
-			// 			console.log('7984651')
-			//     	})
-
-			// socket.on("connect", (res) => {
-			//  console.log(res)
-			//  console.log('7984651')
-			// });
-			// let socket = io('http://127.0.0.1:3000');
-			
-			// let interval = setTimeInterval(()=>{
-			//   socket.emit('random', Math.random());
-			// }, 500);
-			
-			// socket.on('warn', count=>{
-			//   console.log('warning count : '+count);
-			// });
-			
-			// socket.on('disconnect', ()=>{
-			//   clearInterval(interval);
-			// });
-			console.log('7984651')
-		},
-		onLoad(){
-			console.log(654789)
-		uni.connectSocket({
-			url:'',
-		
-			// header: {
-			// 	'content-type': 'application/json'
-			// },
-			// protocols: ['protocol1'],
-			// method: 'GET',
-			success:(res)=>{
-				console.log(res)
-			}
-		})
-	
-		console.log(654789)
-		},
-		
-		methods: {
-			
-			
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 		}
 	}
 </script>
 
 <style>
-<<<<<<< HEAD
 page{
 	background: #EEEEEE;
 }
-=======
-
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 </style>

@@ -7,7 +7,7 @@
 			</view>
 			<view class="time_m"></view>
 			<view class="time_l ">
-				<view class="time_r_01 qy-text-red"><span>12:30</span></view>
+				<view class="time_r_01 qy-text-red"><span>{{orderinfo.deliveryTime?orderinfo.deliveryTime.slice(11,16):'12:30'}}</span></view>
 				<view class="time_r_02">预约送达时间</view>
 			</view>
 		</view>
@@ -82,12 +82,18 @@
 		onLoad(e){
 			console.log(e),
 			this.orderinfo= JSON.parse(e.info)
+			// this.orderinfo= e.info
 			console.log(this.orderinfo,998)
 		},
 		methods:{
 			jump_navigation(){
+				uni.setStorage({
+					key:"orderinfodelivery",
+					data:JSON.stringify(this.orderinfo)
+					
+				})
 				uni.navigateTo({
-					url: '/horseman/navigation/navigation'
+					url: '../frontpersonnavigate/frontpersonnavigate'
 				});
 			},
 			ontel(){

@@ -19,11 +19,7 @@
 		</view>
 		<view class="process_01_r">
 			<view class="process_01_r_01">地址</view>
-<<<<<<< HEAD
 			<span>{{newtitle}}</span>
-=======
-			<span>{{title}}</span>
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 		</view>
 	</view>
   </view>
@@ -42,7 +38,6 @@ export default {
    mounted(){ 
 	   // if(this.title.length>10){ console.log(this.title)}
 	   console.log(Object.prototype.toString.call(this.title))
-<<<<<<< HEAD
 	      if (typeof this.title === 'string') {
 	          try {
 	              JSON.parse(this.title);
@@ -55,9 +50,6 @@ export default {
 	          }
 	      }
 	      console.log('非字符串!')  
-=======
-	  
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
 	  // if(this.title.includes('city')){
 		 // const title=JSON.parse(this.title)
 		 // this.newtitle=title.province+title.city+title.county+title.village

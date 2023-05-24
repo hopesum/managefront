@@ -41,15 +41,15 @@
 						open: false,
 						pages: [
 							{
-								name: '首页',
+								name: '骑手首页',
 								page: '../horsemanindex/horsemanindex'
 							},
 							{
-								name: '认证',
+								name: '实名认证',
 								page: '../frontpersonfill/frontpersonfill'
 							},
 							{
-								name: '导航',
+								name: '骑手定位',
 								page: '../frontpersonnavigate/frontpersonnavigate'
 							},
 							{

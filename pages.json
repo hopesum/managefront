@@ -237,7 +237,7 @@
             "path" : "pages/frontpersonnavigate/frontpersonnavigate",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "骑手导航",
+                "navigationBarTitleText": "骑手定位",
                 "enablePullDownRefresh": false
             }
             
@@ -279,7 +279,7 @@
             }
             
         }
-<<<<<<< HEAD
+
         ,{
             "path" : "pages/myinfo/myinfo",
             "style" :                                                                                    
@@ -289,8 +289,7 @@
             }
             
         }
-=======
->>>>>>> 5fa16b68fb2e9654cc11ea7caa3984e63105278e
+
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

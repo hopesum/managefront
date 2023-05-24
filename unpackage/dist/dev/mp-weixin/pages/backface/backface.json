@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "反馈",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "card": "/components/common/card",
+    "zcm-radio-group": "/components/common/radio-group"
+  }
 }
